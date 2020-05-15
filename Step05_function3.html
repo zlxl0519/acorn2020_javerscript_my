@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_function3.html</title>
+</head>
+<body>
+    <h1>function type 테스트중...</h1>
+    <button onclick="test()">test 함수 호출하기</button>
+    <script>
+        var f1=function(){
+            console.log("f1() 호출됨");
+        };
+        var f2=function(){
+            console.log("f2() 호출됨");
+            return 999;
+            //리턴 했을때 종료
+
+        };
+        var f3 =function(){
+            console.log("f3() 호출됨");
+            var msg="안녕";
+            return msg;
+        };
+        //목적 :1. 호출하고 결과값으로 뭔가를 가져오기위해 예)커피 동작하고 커피나옴.
+            //  2. 동작하고 잊어버림.
+
+        var test=function(){
+            var a=f1(); // a = undefined
+            var b=f2(); // b = 999
+            var c=f3(); // c = "안녕"
+        };
+        //return 값을 안써서 undefined 로 값이 나온다.
+        //눈에 보이진 않지만 실행 흐름이 있음 - 스레드
+        // into - 함수 수행 볼 수 있음.
+    </script>
+</body>
+</html>
