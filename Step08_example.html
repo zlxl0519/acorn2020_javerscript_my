@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step08_example.html</title>
+</head>
+<body>
+    <h1>반복문 활용 예제 테스트중...</h1>
+    <input type="text" id="inputName" placeholder="검색할 이름..."/>
+    <button id="findBtn">검색</button>
+    <p id="console"></p>
+    <script>
+        //친구 정보를 담을 배열
+        var friends=[];
+        //배열에 sample 데이터 담기
+        //정보는 편하게 꺼내고 수정할 수 있도록 오브젝트 타입으로
+        friends.push({name:"김구라", phone:"010", email:"aaa@"});
+        friends.push({name:"김진호", phone:"011", email:"bbb@"});
+        friends.push({name:"이봉하", phone:"017", email:"ccc@"});
+        friends.push({name:"이세희", phone:"018", email:"ddd@"});
+        friends.push({name:"백운용", phone:"019", email:"eee@"});
+
+        
+        document.querySelector("#findBtn")
+        .addEventListener("click", function(){
+            //1. 입력한 이름을 읽어온다.
+            var serch=document.querySelector("#inputName").value;
+                //2. 배열(friends)에서 동일한 이름을 가지고 있는 {}을 찾는다.
+            friends.forEach(function(item, i){
+                //하나하나 검색값과 내용 비교
+                //i번째 방의 친구정보를 불러와서
+                var tmp =friends[i];
+                
+                //만일 입력한 이름, 번호, 이메일 과 친구정보에 있는 이름, 번호, 이메일과 같으면
+                if(serch==tmp.name || serch==tmp.phone ||serch==tmp.email){
+                    document.querySelector("#console").innerText
+                    ="이름 "+ " : " +tmp.name +","+" 전화번호 "+": "+ tmp.phone +","+ " 이메일 "+": "+tmp.email;
+                    
+                }else{
+                    document.querySelector("#console").innerText=
+                    "검색된 정보가 없습니다.";
+                   
+                    
+                };
+                
+
+            });
+        });
+
+    </script>
+</body>
+</html>
