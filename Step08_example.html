@@ -26,6 +26,8 @@
         .addEventListener("click", function(){
             //1. 입력한 이름을 읽어온다.
             var serch=document.querySelector("#inputName").value;
+            //검색된 데이터가 존재 하는 지 여부
+            var isExist=false;
                 //2. 배열(friends)에서 동일한 이름을 가지고 있는 {}을 찾는다.
             friends.forEach(function(item, i){
                 //하나하나 검색값과 내용 비교
@@ -36,14 +38,17 @@
                 if(serch==tmp.name || serch==tmp.phone ||serch==tmp.email){
                     document.querySelector("#console").innerText
                     ="이름 "+ " : " +tmp.name +","+" 전화번호 "+": "+ tmp.phone +","+ " 이메일 "+": "+tmp.email;
-                    
-                }else{
-                    document.querySelector("#console").innerText=
-                    "검색된 정보가 없습니다.";
-                   
-                    
-                };
+                    //검색된 이름이 존재한다고 표시 한다.
+                    isExist=true;
+                }
                 
+             });
+             //forEach 에서 탈출 하는 법중 하나
+            if(isExist==false){
+                document.querySelector("#console").innerText
+                ="검색내용이 없습니다."
+            };
+        });
 
             });
         });
