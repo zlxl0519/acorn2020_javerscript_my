@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_string.htmlument</title>
+</head>
+<body>
+    <h1>string type 테스트중...</h1>
+    <script>
+        /*
+            string type 도 객체이다.
+            객체는 저장소(속성) 과 기능(function) 으로 구성된다.
+        */
+        var line="abcde/12345/!@#$%/가나다라";
+        //string type 의 저장소 참조
+        var size=line.length;
+        //string type 의 기능 사용
+        var result=line.replace("e", "EEE");//앞에 문자를 뒤에문자로 변경
+        var result2=line.substring(0,5);//index 0번~ 5번미만까지 가져온다.
+        var result3=line.split("/");//이문자가 있는데를 기점으로 분리하고 이 문자는 사라짐.
+
+        //back tick 문자를 이용해서 문자열을 만들수도 있다.
+        var info = `내이름은 김구라
+        나의`;    // `는 여러줄로 쓸수도 있다.
+
+        var myName="김구라";
+        var yourName="원숭이";
+
+        var info2=`나의 이름 : ${myName}, 너의 이름 : ${yourName}`;
+    </script>
+</body>
+</html>
