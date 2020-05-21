@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_example3.html</title>
+    <style>
+        tr:hover{
+            background-color: yellow;
+            cursor:pointer;
+        }
+        table{
+            border: 2px solid #0ee7ca;
+            border-collapse: collapse;
+            
+        }
+        tr{
+            border: 1px solid #0ee7ca;
+            
+        }
+        th, td{
+            border: 1px solid #0ee7ca;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>createElement 테스트중...</h1>
+    <input type="text" id="inputNum" placeholder="번호입력..."/>
+    <input type="text" id="inputName" placeholder="이름입력..."/>
+    <input type="text" id="inputAddr" placeholder="주소입력..."/>
+    <button id="addBtn">추가</button>
+    <h1>추가된 회원 목록 입니다.</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        document.querySelector("#addBtn")
+        .addEventListener("click", function(){
+            //1. 입력한 정보를 읽어와서
+            //2. td 요소 3개를 만들어서 innerText 에 출력하고
+            let td1=document.createElement("td")
+            let inputNum=document.querySelector("#inputNum");
+            td1.innerText=inputNum.value;
+            let td2=document.createElement("td")
+            let inputNa=document.querySelector("#inputName");
+            td2.innerText=inputNa.value;
+            let td3=document.createElement("td")
+            let inputA=document.querySelector("#inputAddr");
+            td3.innerText=inputA.value;
+            //3. tr 요소 1개를 만들어서 td 를 append 하고
+            let tr=document.createElement("tr");
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            //4. tbody 요소에 tr 요소를 append 한다.
+            document.querySelector("tbody").append(tr);
+            inputNum.value="";
+            inputNa.value="";
+            inputA.value="";
+            //5. tr 을 클릭했을때 실행할 함수 등록
+            tr.addEventListener("click", function(){
+                let toDelete=confirm("삭제하시겠습니까?");
+                if(toDelete){
+                    this.remove();
+                };
+            });
+           
+        });
+
+    </script>
+</body>
+</html>
