@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery06_example.html</title>
+</head>
+<body>
+    <h1>jQuery 예제</h1>
+    <input type="text" id="inputMsg"/>
+    <button id="addBtn">추가</button>
+    <ul id="msgList">
+
+    </ul>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        //추가 버튼을 눌렀을때 실행할 함수 등록
+        $("#addBtn").on("click", function(){
+            //입력한 문자열을 읽어온다.
+            let msg=$("#inputMsg").val();
+            let btn=$("<button>").text("x").on("click",function(){
+                $(this)// click 이벤트가 발생한 버튼
+                .parent()// 이벤트가 발생한 버튼의 부모 li
+                .remove();
+            });
+            // li 요소를 만들어서 msg 출력하고 #msgList 에 추가 하기
+            $("<li>").text(msg).append(btn).appendTo("#msgList");
+            //입력창 지우고, 포커스(클릭버튼을 누르고 커서가 그대로 있음)도 주기
+            $("#inputMsg").val("").focus();
+            //x버튼 눌러서 li 없애기
+            //$(btn).on("click",function(){
+            //    $(this).parent().remove();
+            //});
+            
+        });
+        $("#inputMsg").keyup(function(e){
+            if(e.key=="Enter"){
+                let msg=$("#inputMsg").val();
+                let btn=$("<button>").text("x").on("click",function(){
+                    $(this)
+                    .parent()
+                    .remove();
+                });
+                $("<li>").text(msg).append(btn).appendTo("#msgList");
+                $("#inputMsg").val("").focus();
+            }
+        });
+        
+    </script>
+</body>
+</html>
