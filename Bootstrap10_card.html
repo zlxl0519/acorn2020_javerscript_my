@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap10_card.html</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+    <!--md 사이즈에서 가운데 정렬된 container-->
+    <div class="container-md">
+        <h1>기본 card</h1>
+        <div class="card">
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptate illo perferendis ea beatae, culpa iure sunt veritatis nobis iusto sed est ab ratione! Voluptas eum facere repudiandae facilis atque?
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card shadow">
+                    <div class="card-body text-primary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptate illo perferendis ea beatae, culpa iure sunt veritatis nobis iusto sed est ab ratione! Voluptas eum facere repudiandae facilis atque?
+                    </div>
+                </div>    
+            </div>
+            <div class="col-sm">
+                <div class="card shadow">
+                    <div class="card-body text-success">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem voluptate illo perferendis ea beatae, culpa iure sunt veritatis nobis iusto sed est ab ratione! Voluptas eum facere repudiandae facilis atque?
+                    </div>
+                </div><!--card 종료-->
+            </div><!--col 종료-->
+        </div><!--.row종료-->
+        <h1>card header 와 footer</h1>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">header</div>
+                    <div class="card-body">body</div>
+                    <div class="card-footer">footer</div>
+                </div>
+            </div><!--col-ms 종료-->
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Android</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>운영체제가 Android 입니다.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">구입하기</a>
+                    </div>
+                </div>
+            </div><!--col-ms 종료-->
+        </div><!--row 종료-->
+        <h1>card 이미지</h1>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" src="images/image1.png"/>
+                    <div class="card-body">
+                        <h4 class="card-title">소녀시대</h4>
+                        <p class="card-text">어쩌구..저쩌구..</p>
+                        <a href="#" class="btn btn-info">profile</a>
+                    </div>
+                </div>
+            </div><!--col 종료-->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">소녀시대</h4>
+                        <p class="card-text">어쩌구..저쩌구..</p>
+                        <!--stretched-link : 링크 범위를 확장하는 것 card 자체 아무데나 눌러도 링크 감.-->
+                        <a href="#" class="btn btn-info stretched-link">profile</a>
+                    </div>
+                    <img class="card-img-bottom" src="images/image1.png"/>
+                </div><!--card 종료-->
+            </div><!--col 종료-->
+        </div><!--row종료-->
+    </div><!--container 종료-->
+</body>
+</html>
